@@ -56,3 +56,28 @@ super + c
 
 ~button1
     berryc pointer_focus
+
+
+
+#
+# Media
+#
+
+XF86AudioMute
+    ~/.scripts/audio_mute
+    
+XF86AudioRaiseVolume
+    ~/.scripts/audio_up
+    
+XF86AudioLowerVolume
+    ~/.scripts/audio_down
+    
+XF86AudioPrev
+    ~/.scripts/audio_prev
+    
+XF86AudioNext
+    ~/.scripts/audio_next
+    
+XF86AudioPlay
+    ~/.scripts/audio_play
+    
