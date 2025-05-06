@@ -1,0 +1,150 @@
+palette = "dark"
+
+format = """
+[█](fg:segment_0)\
+$os\
+$username\
+[](fg:segment_0 bg:segment_1)\
+$directory\
+[](fg:segment_1 bg:segment_2)\
+$git_branch\
+$git_status\
+[](fg:segment_2 bg:segment_3)\
+$nodejs\
+$rust\
+$golang\
+$python\
+$dotnet\
+$dart\
+$c\
+$cmake\
+$kotlin\
+$lua\
+$gradle\
+[](fg:segment_3 bg:segment_4)\
+$time\
+[](fg:segment_4)\
+\n$character"""
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](white)"
+
+[os]
+style = "bg:segment_0 fg:text"
+disabled = false 
+format = '[$symbol ]($style)'
+
+[os.symbols]
+Arch = ""
+Debian = ""
+Fedora = ""
+Linux = ""
+Mint = ""
+Raspbian = ""
+Ubuntu = ""
+Windows = "󰍲"
+
+[username]
+show_always = true
+style_user = "bg:segment_0 fg:text"
+style_root = "bg:segment_0 fg:text"
+format = '[ $user ]($style)'
+disabled = false
+
+[directory]
+style = "fg:text bg:segment_1"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+style = "fg:text bg:segment_2"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "fg:text bg:segment_2"
+format = '[($all_status$ahead_behind )]($style)'
+
+
+[nodejs]
+symbol = ""
+style = "fg:text bg:accent"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = "󱘗"
+style = "fg:text bg:accent"
+format = '[ $symbol ($version) ]($style)'
+
+[golang]
+symbol = "󰟓"
+style = "fg:text bg:accent"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "fg:text bg:accent"
+format = '[ $symbol ($version) ]($style)'
+
+[dotnet]
+symbol = "󰪮"
+style = "fg:text bg:accent"
+format = '[ $symbol ($version) ]($style)'
+
+[dart]
+symbol = ""
+style = "fg:text bg:accent"
+format = '[ $symbol ($version) ]($style)'
+
+[c]
+symbol = ""
+style = "fg:text bg:accent"
+format = '[ $symbol ($version) ]($style)'
+
+[cmake]
+symbol = ""
+style = "fg:text bg:accent"
+format = '[ $symbol ($version) ]($style)'
+
+[kotlin]
+symbol = ""
+style = "fg:text bg:accent"
+format = '[ $symbol ($version) ]($style)'
+
+[lua]
+symbol = ""
+style = "fg:text bg:accent"
+format = '[ $symbol ($version) ]($style)'
+
+[gradle]
+symbol = ""
+style = "fg:text bg:accent"
+format = '[ $symbol ($version) ]($style)'
+
+
+[palettes.dark]
+text = "#dcdcdc"
+segment_0 = "#2d2d30"
+segment_1 = "#3e3e42"
+segment_2 = "#484c56"
+segment_3 = "#007acc"
+segment_4 = "#1e1e1e"
+accent = "#007acc"
+
+black="#3e3e42"
+red="#f55757" 
+green="#7aba66"
+yellow="#e7ca8d"
+blue="#3794cf"  
+magenta="#d596d0"
+cyan="#5edac0"   
+white="#ffffff"   
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:segment_4 fg:text"
+format = '[   $time ]($style)'
