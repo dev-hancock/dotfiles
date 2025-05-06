@@ -76,12 +76,5 @@ XF86AudioLowerVolume
 # Media
 #
 
-XF86AudioPrev
-    ~/.scripts/audio_prev
-    
-XF86AudioNext
-    ~/.scripts/audio_next
-    
-XF86AudioPlay
-    ~/.scripts/audio_play
-    
+XF86Audio{Prev,Play,Next}
+    playerctl {previous, play-pause, next}
