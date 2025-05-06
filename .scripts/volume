@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+VOLUME_STEP=5
+
 get_volume() {
     pulsemixer --get-volume | awk '{print ($1 > $2) ? $1 : $2}'
 }
@@ -9,17 +11,19 @@ get_mute() {
 }
 
 increase(){ 
+    local step="${1:-VOLUME_STEP}"
     if [[ "$(get_mute)" -eq 1 ]]; then
        unmute 
     fi
-    pulsemixer --change-volume +5
+    pulsemixer --change-volume +"$step"
 }
 
 decrease(){ 
+    local step="${1:-VOLUME_STEP}"
     if [[ "$(get_mute)" -eq 1 ]]; then
        unmute 
     fi
-    pulsemixer --change-volume -5
+    pulsemixer --change-volume -"$step"
 }
 
 mute() {
@@ -44,10 +48,10 @@ if command -v pulsemixer >/dev/null; then
             get_volume
             ;;
         --increase)
-            increase
+            increase "$2"
             ;;
-        --decrease)
-            decrease
+        --decrease) 
+            decrease "$2"
             ;;
         --get-mute)
             get_mute
