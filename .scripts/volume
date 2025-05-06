@@ -11,7 +11,7 @@ get_mute() {
 }
 
 increase(){ 
-    local step="${1:-VOLUME_STEP}"
+    local step="${1:-$VOLUME_STEP}"
     if [[ "$(get_mute)" -eq 1 ]]; then
        unmute 
     fi
@@ -19,7 +19,7 @@ increase(){
 }
 
 decrease(){ 
-    local step="${1:-VOLUME_STEP}"
+    local step="${1:-$VOLUME_STEP}"
     if [[ "$(get_mute)" -eq 1 ]]; then
        unmute 
     fi
