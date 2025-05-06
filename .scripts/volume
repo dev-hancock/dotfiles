@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+get_volume() {
+    pulsemixer --get-volume | awk '{print ($1 > $2) ? $1 : $2}'
+}
+
+get_mute() {
+    pulsemixer --get-mute
+}
+
+increase(){ 
+    if [[ "$(get_mute)" -eq 1 ]]; then
+       unmute 
+    fi
+    pulsemixer --change-volume +5
+}
+
+decrease(){ 
+    if [[ "$(get_mute)" -eq 1 ]]; then
+       unmute 
+    fi
+    pulsemixer --change-volume -5
+}
+
+mute() {
+    pulsemixer --mute
+}
+
+unmute() {
+    pulsemixer --unmute
+}
+
+toggle() {
+    if [[ "$(get_mute)" -eq 1 ]]; then
+        unmute
+    else
+        mute
+    fi
+}
+
+if command -v pulsemixer >/dev/null; then
+    case "$1" in
+        --get-volume)
+            get_volume
+            ;;
+        --increase)
+            increase
+            ;;
+        --decrease)
+            decrease
+            ;;
+        --get-mute)
+            get_mute
+            ;;
+        --mute)
+            mute
+            ;;
+        --unmute)
+            unmute
+            ;;
+        --toggle)
+            toggle
+            ;;
+    esac
+else
+    echo "pulsemixer not found"
+    exit 1
+fi

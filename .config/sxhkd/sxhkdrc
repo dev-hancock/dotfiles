@@ -60,18 +60,22 @@ super + c
 
 
 #
-# Media
+# Volume
 #
 
 XF86AudioMute
-    ~/.scripts/audio_mute
+    ~/.scripts/volume --toggle
     
 XF86AudioRaiseVolume
-    ~/.scripts/audio_up
+    ~/.scripts/volume --increase
     
 XF86AudioLowerVolume
-    ~/.scripts/audio_down
+    ~/.scripts/volume --decrease
     
+#
+# Media
+#
+
 XF86AudioPrev
     ~/.scripts/audio_prev
     
