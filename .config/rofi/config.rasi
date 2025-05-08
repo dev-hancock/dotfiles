@@ -1,0 +1,103 @@
+/*****----- colors -----*****/
+* {
+    background-0:               #1E2127FF;
+    background-1:               #282B31FF;
+    foreground:                 #FFFFFFFF;
+    selected:                   #61AFEFFF;
+    active:                     #98C379FF;
+    urgent:                     #E06C75FF;
+}
+
+
+configuration {
+    modi:                       "drun,run";
+    show-icons:                 false;
+    drun-display-format:        "{name}";
+}
+
+
+/*****----- window -----*****/
+window {
+    width: 600px;
+    background-color:           @background-0;
+}
+
+mainbox {
+    padding:                    20px;
+    spacing:                    10px;
+    background-color:           transparent;
+    children:                   [ "inputbar", "listview" ];
+}
+
+/*****----- inputbar -----*****/
+inputbar {
+    enabled:                    true;
+    spacing:                    10px;
+    margin:                     0px;
+    padding:                    10px;
+    border:                     0px solid;
+    border-radius:              0px;
+    border-color:               @background-1;
+    background-color:           @background-1;
+    text-color:                 @foreground;
+    children:                   [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+    enabled:                    true;
+    padding:                    0px 5px;
+    expand:                     false;
+    str:                        "";
+    background-color:           inherit;
+    text-color:                 inherit;
+}
+
+entry {
+    enabled:                    true;
+    padding:                    2px 0px;
+    background-color:           inherit;
+    text-color:                 inherit;
+    cursor:                     text;
+    placeholder:                "Search...";
+    placeholder-color:          inherit;
+}
+
+/*****----- listview -----*****/
+listview {
+    lines:                      6;
+    cycle:                      true;
+    scrollbar:                  true;
+    background-color:           transparent;
+    spacing:                    10px;
+    fixed-height:               true;
+}
+
+scrollbar {
+    handle-width:               5px ;
+    handle-color:               @selected;
+    border-radius:              0px;
+    background-color:           @background-1;
+}
+
+/*****----- elements -----*****/
+element {
+    spacing:                    10px;
+    padding:                    10px;
+    background-color:           transparent;
+    text-color:                 @foreground;
+}
+
+element normal.normal {
+    background-color:           @background-0;
+    text-color:                 @foreground;
+}
+
+element selected.normal {
+    background-color:           @selected;
+    text-color:                 @background-1;
+}
+
+element-text {
+    background-color:           transparent;
+    text-color:                 inherit;
+}

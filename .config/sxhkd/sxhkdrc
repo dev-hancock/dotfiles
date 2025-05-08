@@ -78,3 +78,11 @@ XF86AudioLowerVolume
 
 XF86Audio{Prev,Play,Next}
     playerctl {previous, play-pause, next}
+
+#
+# Rofi
+#
+
+super + r
+    rofi -show drun -theme ~/.config/rofi/config.rasi
+
