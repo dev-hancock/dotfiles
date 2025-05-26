@@ -1,4 +1,3 @@
--- Bootstrap lazy.nvim
 local path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(path) then
   local repo = "https://github.com/folke/lazy.nvim.git"
@@ -15,14 +14,11 @@ if not (vim.uv or vim.loop).fs_stat(path) then
 end
 vim.opt.rtp:prepend(path)
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
--- Setup lazy.nvim
 require("lazy").setup({
   spec = {
     { import = "plugins" },
   },
-  install = { colorscheme = { "habamax" } },
-  checker = { enabled = true },
+  install = { colorscheme = { "tokyonight", "habamax" } },
+  checker = { enabled = true, notify = true },
+
 })

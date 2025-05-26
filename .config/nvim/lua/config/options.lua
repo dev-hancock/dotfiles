@@ -11,3 +11,5 @@ opt.tabstop = 4			    -- Number of spaces a <Tab> counts for
 opt.shiftwidth = 4          -- Number of spaces for auto-indent
 opt.expandtab = true		-- Use spaces instead of tabs
 opt.smartindent = true		-- Smart indentation
+
+opt.termguicolors = true     

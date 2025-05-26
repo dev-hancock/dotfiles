@@ -15,15 +15,11 @@ increase(){
     if [[ "$(get_mute)" -eq 1 ]]; then
        unmute 
     fi
-    pulsemixer --change-volume +"$step"
+    pulsemixer --change-volume +"$step" 
 }
 
 decrease(){ 
-    local step="${1:-$VOLUME_STEP}"
-    if [[ "$(get_mute)" -eq 1 ]]; then
-       unmute 
-    fi
-    pulsemixer --change-volume -"$step"
+    pulsemixer --change-volume -$VOLUME_STEP 
 }
 
 mute() {
@@ -51,7 +47,7 @@ if command -v pulsemixer >/dev/null; then
             increase "$2"
             ;;
         --decrease) 
-            decrease "$2"
+            decrease
             ;;
         --get-mute)
             get_mute

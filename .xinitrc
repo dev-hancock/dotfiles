@@ -1,9 +1,7 @@
 sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
 
-nitrogen --restore &
+hsetroot -cover $HOME/Pictures/wallpaper.png
 
-dunst &
+# dunst &
 
-polybar main &:w
-
-exec berry
+exec bspwm
