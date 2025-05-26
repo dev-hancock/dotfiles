@@ -1,7 +1,0 @@
-[global]
-origin = bottom-right
-
-[rule]
-appname = "audio"
-origin = bottom-center
-

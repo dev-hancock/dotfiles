@@ -4,4 +4,4 @@ hsetroot -cover $HOME/Pictures/wallpaper.png
 
 # dunst &
 
-exec bspwm
+# exec bspwm

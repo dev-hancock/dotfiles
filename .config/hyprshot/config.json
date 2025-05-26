@@ -1,0 +1,8 @@
+{
+  "screenshotDir": "~/Pictures",
+  "copyToClipboard": true,
+  "showNotifications": true,
+  "filenamePrefix": "hyprshot_",
+  "filenameDateFormat": "%Y-%m-%d_%H-%M-%S"
+}
+
