@@ -1,0 +1,11 @@
+show = drun
+prompt = Run:
+width = 600
+height = 500
+lines = 10
+columns = 1
+allow_markup = true
+hide_scroll = false
+insensitive = true
+no_actions = false
+term = foot
