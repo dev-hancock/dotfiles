@@ -1,68 +1,109 @@
+@define-color md-bg rgba(28, 27, 31, 1);
+@define-color md-on-bg rgba(230, 225, 229, 1);
+@define-color md-surface rgba(43, 42, 48, 1);
+@define-color md-on-surface rgba(230, 225, 229, 1);
+@define-color md-outline rgba(147, 143, 153, 1);
+@define-color md-primary rgba(51, 204, 255, 1); 
+
 /* Whole Wofi window */
 window {
-    /* background-color: rgba(0,0,0,0.0); */
-    /* border-radius: 0px; */
-    /* box-shadow: 0 0 0 rgba(0,0,0,0); */
-    /* padding: 0; */
-    /* margin: 0; */
+    background-color: @md-bg;
 }
 
 /* Outer box containing everything */
 #outer-box {
-    /* padding: 0; */
-    /* margin: 0; */
+    /* Material Spacing */
     padding: 24px;
     margin: auto;
 }
 
 /* Inner box containing the list of entries */
 #inner-box {
-    /* padding: 0; */
-    /* margin: 0; */
+    /* Material Spacing */
     padding: 0;
     margin: 0;
 }
 
 /* Search input field */
 #input {
-    /* background-color: rgba(0,0,0,0); */
-    /* color: #ffffff; */
-    /* font-size: 16pt; */
-    /* border-radius: 0px; */
-    /* padding: 0; */
-    /* margin: 0; */
+    /* Material Spacing */
     border-radius: 0px;
     padding: 12px 16px;
     margin: 0 0 16px 0;
+
+    border: none;
+    border-bottom: 2px solid alpha(@md-outline, 0.4);
+
+    background-color: @md-bg;
+    color: @md-on-bg;
+    caret-color: @md-on-bg;
+}
+
+/* Force focus style to nothing */
+#input:focus {
+    outline: none;
+    box-shadow: none;
+    border-bottom: 2px solid @md-primary;
+    transition: border-bottom 0.5s ease;
+}
+
+/* Search image */
+#input image {
+    padding-right: 12px;
+    color: @md-on-surface;
 }
 
 /* Individual entry (row in list) */
 #entry {
-    /* background-color: rgba(0,0,0,0); */
-    /* color: #ffffff; */
-    /* font-size: 14pt; */
-    /* border-radius: 0px; */
-    /* padding: 0; */
-    /* margin: 0; */
-    /* display: flex; */
-    /* align-items: center; */
-    padding: 16px 24px;
-    margin: 0 0 8px 0;
+    /* Material Spacing */
+    padding: 16px 24px 16px 48px;
+
+    margin: 0;
     display: flex;
     align-items: center;
+
+    background-color: @md-bg;
+    color: @md-on-bg;
 }
 
 /* Selected entry */
 #entry:selected {
-    /* background-color: rgba(0,0,0,0); */
-    /* color: #ffffff; */
+    outline: none;
+    background-color: @md-surface;
+    color: @md-on-surface;
 }
+
+/* Entry icon */
+#entry arrow,
+#entry image:last-child {
+    margin-left: -32px;
+    margin-right: 16px;
+}
+
 
 /* Text inside the entry */
 #text {
-    /* font-size: 14pt; */
-    /* margin-left: 0px; */
-    /* color: #ffffff; */
-    margin-left: 16px;
+    /* Material Spacing */
+    margin-left: 0px;
+
+    color: @md-on-surface;
+}
+
+/* GTK Theme */
+scrollbar slider {
+    min-height: 32px;
+    min-width: 8px;
+    border-radius: 4px;
+    border: none;
+
+    background-color: alpha(@md-outline, 0.4);
+}
+
+/* Disable overshoot effect */
+overshoot.top,
+overshoot.bottom {
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
 }
 
